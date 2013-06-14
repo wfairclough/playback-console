@@ -17,7 +17,7 @@ function handle(line) {
   try {
     var swf = $('#rdio_api').get(0);
     with(swf) {
-      var result = eval(line);
+      var result = eval(line.toLowerCase());
     }
     if (typeof result == 'undefined') {
       return true;
@@ -35,6 +35,7 @@ function handle(line) {
 }
 
 $(document).ready(function() {
+	
   $console = $('#console').console({
     promptLabel: '>>> ',
     autofocus: true,
